@@ -8,8 +8,9 @@ class Choose(Enum):
 
 
 class RPSEngine:
-    all_plays = [[0, 1, 2], [2, 0, 1], [1, 2, 0]]
-    unfair_plays = ['paper', 'scissors', 'rock']
+    ALL_PLAYS = [[0, 1, 2], [2, 0, 1], [1, 2, 0]]
+    UNFAIR_PLAYS = ['paper', 'scissors', 'rock']
+    OPTIONS = ['paper', 'scissors', 'rock']
 
     def __init__(self):
         pass
