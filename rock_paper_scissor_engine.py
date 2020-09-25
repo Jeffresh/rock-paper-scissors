@@ -18,7 +18,8 @@ class RPSEngine:
         pass
 
     def human_play(self):
-        pass
+        choice = input()
+        return choice if choice in RPSEngine.OPTIONS else None
 
     def cpu_play(self):
         pass
