@@ -25,7 +25,9 @@ class RPSEngine:
             print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
 
     def start_game(self):
-        pass
+        human_choice = self.human_play()
+        cpu_choice = self.cpu_play(human_choice)
+        self.evaluate(human_choice, cpu_choice)
 
     def human_play(self):
         choice = input()
