@@ -20,7 +20,11 @@ class RPSEngine:
 
     def human_play(self):
         choice = input()
-        return choice if choice in RPSEngine.OPTIONS else None
+        return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
 
-    def cpu_play(self):
-        pass
+    def cpu_play(self, human_choice):
+        choice = Choose[RPSEngine.UNFAIR_PLAYS[human_choice]].value
+        return choice
+
+# if __name__ == '__main__':
+#     print(type(Choose['ROCK'].value))
