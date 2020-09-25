@@ -38,4 +38,4 @@ class RPSEngine:
         return choice
 
 # if __name__ == '__main__':
-#     print(type(Choose['ROCK'].value))
+#     to testing
