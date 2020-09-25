@@ -48,6 +48,6 @@ Example 2
 Sorry, but the computer chose scissors
 ````
 
-
+### This project is a part of the following track: Python Developer from Jetbrains Academy
 
 
