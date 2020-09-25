@@ -15,6 +15,15 @@ class RPSEngine:
     def __init__(self):
         pass
 
+    def evaluate(self, hplay, cpplay):
+        game_result = RPSEngine.ALL_PLAYS[cpplay][hplay]
+        if game_result == 0:
+            print("It's a draw!")
+        elif game_result == 1:
+            print("Congrats! you win!")
+        elif game_result == 2:
+            print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
+
     def start_game(self):
         pass
 
