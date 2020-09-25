@@ -34,7 +34,7 @@ class RPSEngine:
         return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
 
     def cpu_play(self, human_choice):
-        choice = Choose[RPSEngine.UNFAIR_PLAYS[human_choice]].value
+        choice = Choose[RPSEngine.UNFAIR_PLAYS[human_choice].upper()].value
         return choice
 
 # if __name__ == '__main__':
