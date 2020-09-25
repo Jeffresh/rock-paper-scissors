@@ -4,7 +4,7 @@ from enum import Enum
 class Choose(Enum):
     ROCK = 0
     PAPER = 1
-    SCISSOR = 2
+    SCISSORS = 2
 
 
 class RPSEngine:
