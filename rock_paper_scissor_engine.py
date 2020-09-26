@@ -26,9 +26,17 @@ class RPSEngine:
             print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
 
     def start_game(self):
-        human_choice = self.human_play()
-        cpu_choice = self.cpu_play(human_choice)
-        self.evaluate(human_choice, cpu_choice)
+        input_choice = input()
+        while input_choice in RPSEngine.OPTIONS:
+            human_choice = self.human_play(input_choice)
+            cpu_choice = self.cpu_play(human_choice)
+            self.evaluate(human_choice, cpu_choice)
+            input_choice = input()
+        else:
+            if input_choice == '!exit':
+                print("Bye!")
+            else:
+                print("Invalid input")
 
     def human_play(self, choice):
         return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
