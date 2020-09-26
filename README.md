@@ -48,6 +48,7 @@ Example 2
 Sorry, but the computer chose scissors
 ````
 
+<<<<<<< HEAD
 # Stage 2/5: Equalizing chances
 
 ### Description
@@ -150,3 +151,6 @@ Invalid input
 > !exit
 Bye!
 ```
+
+### This project is a part of the following track: Python Developer from Jetbrains Academy
+>>>>>>> 2a43f8a8a14948805d1b716894fb3d6a43b8c68b
