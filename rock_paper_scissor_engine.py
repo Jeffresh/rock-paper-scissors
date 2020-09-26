@@ -30,8 +30,7 @@ class RPSEngine:
         cpu_choice = self.cpu_play(human_choice)
         self.evaluate(human_choice, cpu_choice)
 
-    def human_play(self):
-        choice = input()
+    def human_play(self, choice):
         return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
 
     def cpu_play(self, human_choice):
