@@ -18,9 +18,9 @@ class RPSEngine:
     def evaluate(self, hplay, cpplay):
         game_result = RPSEngine.ALL_PLAYS[cpplay][hplay]
         if game_result == 0:
-            print("It's a draw!")
+            print("There is a draw ({})".format(Choose(cpplay).name.lower()))
         elif game_result == 1:
-            print("Congrats! you win!")
+            print("Well done. The computer chose {} and failed!".format(Choose(cpplay).name.lower()))
         elif game_result == 2:
             print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
 
