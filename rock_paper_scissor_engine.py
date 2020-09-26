@@ -1,6 +1,7 @@
 from enum import Enum
 from random import randint
 
+
 class Choose(Enum):
     ROCK = 0
     PAPER = 1
@@ -38,4 +39,5 @@ class RPSEngine:
         return choice
 
 # if __name__ == '__main__':
-#     to testing
+#     rps_game = RPSEngine()
+#     rps_game.start_game()
