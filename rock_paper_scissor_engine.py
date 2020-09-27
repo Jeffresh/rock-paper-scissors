@@ -15,6 +15,7 @@ class RPSEngine:
 
     def __init__(self):
         self.rating_file = open('rating.txt', mode='a')
+        self.actual_user = None
         self.actual_user_score = 0
         self.rating_file.close()
 
