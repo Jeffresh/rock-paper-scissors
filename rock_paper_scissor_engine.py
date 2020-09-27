@@ -9,9 +9,7 @@ class Choose(Enum):
 
 
 class RPSEngine:
-    ALL_PLAYS = [[0, 1, 2], [2, 0, 1], [1, 2, 0]]
-    UNFAIR_PLAYS = ['paper', 'scissors', 'rock']
-    OPTIONS = ['paper', 'scissors', 'rock']
+    OPTIONS = ['rock', 'paper', 'scissors']
 
     def __init__(self):
         self.rating_file = open('rating.txt', mode='a')
@@ -19,16 +17,21 @@ class RPSEngine:
         self.actual_user_score = 0
         self.rating_file.close()
 
-    def evaluate(self, hplay, cpplay):
-        game_result = RPSEngine.ALL_PLAYS[cpplay][hplay]
-        if game_result == 0:
-            print("There is a draw ({})".format(Choose(cpplay).name.lower()))
+    def evaluate(self, hplay, cpuplay):
+        if hplay == cpuplay:
+            print("There is a draw ({})".format(cpuplay))
             self.actual_user_score += 50
-        elif game_result == 1:
-            print("Well done. The computer chose {} and failed!".format(Choose(cpplay).name.lower()))
-            self.actual_user_score += 100
-        elif game_result == 2:
-            print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
+        else:
+            index_option = self.game_options.index(hplay)
+            new_options = self.game_options[index_option + 1:] + self.game_options[:index_option]
+            options_divider = len(new_options) // 2
+            defeated_options = new_options[:options_divider]
+            beating_options = new_options[options_divider:]
+            if cpuplay in defeated_options:
+                print("Sorry, but the computer chose {}".format(cpuplay))
+            elif cpuplay in beating_options:
+                print("Well done. The computer chose {} and failed!".format(cpuplay))
+                self.actual_user_score += 100
 
     def start_game(self):
         input_choice = input()
