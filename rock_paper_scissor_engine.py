@@ -82,11 +82,11 @@ class RPSEngine:
         self.update_score()
 
     def human_play(self, choice):
-        return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
+        return choice if choice in RPSEngine.OPTIONS else None
 
-    def cpu_play(self, human_choice):
+    def cpu_play(self):
         choice = randint(0, 2)
-        return choice
+        return RPSEngine.OPTIONS[choice]
 
 
 if __name__ == '__main__':
