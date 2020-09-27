@@ -56,6 +56,18 @@ class RPSEngine:
         if not previous_player:
             self.rating_file.write('{} 0\n'.format(user_name))
         self.rating_file.close()
+        self.actual_user = user_name
+
+    def update_score(self):
+        self.rating_file = open('rating.txt', mode='r')
+        entries = self.rating_file.readlines()
+        self.rating_file.close()
+        for index, entry in enumerate(entries):
+            if self.actual_user in entry:
+                entries[index] = '{} {}\n'.format(self.actual_user, self.actual_user_score)
+
+        self.rating_file = open('rating.txt', mode='w')
+        self.rating_file.writelines(entries)
 
     def new_game(self):
         name = input('Enter your name: ')
