@@ -23,8 +23,10 @@ class RPSEngine:
         game_result = RPSEngine.ALL_PLAYS[cpplay][hplay]
         if game_result == 0:
             print("There is a draw ({})".format(Choose(cpplay).name.lower()))
+            self.actual_user_score += 50
         elif game_result == 1:
             print("Well done. The computer chose {} and failed!".format(Choose(cpplay).name.lower()))
+            self.actual_user_score += 100
         elif game_result == 2:
             print("Sorry, but the computer chose {}".format(Choose(cpplay).name.lower()))
 
