@@ -15,6 +15,7 @@ class RPSEngine:
         self.rating_file = open('rating.txt', mode='a')
         self.actual_user = None
         self.actual_user_score = 0
+        self.game_options = None
         self.rating_file.close()
 
     def evaluate(self, hplay, cpuplay):
@@ -73,6 +74,11 @@ class RPSEngine:
 
         self.rating_file = open('rating.txt', mode='w')
         self.rating_file.writelines(entries)
+
+    def chose_options(self):
+        options = input()
+        self.game_options = options.split(',') if options else ['rock', 'paper', 'scissors']
+        RPSEngine.OPTIONS = self.game_options
 
     def new_game(self):
         name = input('Enter your name: ')
