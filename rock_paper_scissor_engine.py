@@ -85,6 +85,7 @@ class RPSEngine:
         choice = randint(0, 2)
         return choice
 
-# if __name__ == '__main__':
-#     rps_game = RPSEngine()
-#     rps_game.start_game()
+
+if __name__ == '__main__':
+    rps_game = RPSEngine()
+    rps_game.new_game()
