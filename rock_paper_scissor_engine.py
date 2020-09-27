@@ -40,6 +40,8 @@ class RPSEngine:
         else:
             if input_choice == '!exit':
                 print("Bye!")
+            elif input_choice == '!rating':
+                print(self.actual_user_score)
             else:
                 print("Invalid input")
 
