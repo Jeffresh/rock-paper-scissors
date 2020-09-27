@@ -14,7 +14,9 @@ class RPSEngine:
     OPTIONS = ['paper', 'scissors', 'rock']
 
     def __init__(self):
-        pass
+        self.rating_file = open('rating.txt', mode='a')
+        self.actual_user_score = 0
+        self.rating_file.close()
 
     def evaluate(self, hplay, cpplay):
         game_result = RPSEngine.ALL_PLAYS[cpplay][hplay]
