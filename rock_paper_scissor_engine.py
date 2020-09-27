@@ -84,6 +84,8 @@ class RPSEngine:
         name = input('Enter your name: ')
         print('Hello, {}'.format(name))
         self.register_name(name)
+        self.chose_options()
+        print("Okay let's start")
         self.start_game()
         self.update_score()
 
