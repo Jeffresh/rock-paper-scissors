@@ -38,7 +38,7 @@ class RPSEngine:
         input_choice = input()
         while input_choice in RPSEngine.OPTIONS:
             human_choice = self.human_play(input_choice)
-            cpu_choice = self.cpu_play(human_choice)
+            cpu_choice = self.cpu_play()
             self.evaluate(human_choice, cpu_choice)
             input_choice = input()
         else:
