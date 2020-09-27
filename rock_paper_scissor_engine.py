@@ -73,6 +73,8 @@ class RPSEngine:
         name = input('Enter your name: ')
         print('Hello, {}'.format(name))
         self.register_name(name)
+        self.start_game()
+        self.update_score()
 
     def human_play(self, choice):
         return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
