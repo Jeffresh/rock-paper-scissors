@@ -40,6 +40,25 @@ class RPSEngine:
             else:
                 print("Invalid input")
 
+    def register_name(self, user_name):
+        previous_player = False
+        self.rating_file = open('rating.txt', mode='r+')
+
+        for line in self.rating_file:
+            name, rate = line.split()
+            if name == user_name:
+                self.actual_user_score = int(rate)
+                previous_player = True
+                break
+        if not previous_player:
+            self.rating_file.write('{} 0\n'.format(user_name))
+        self.rating_file.close()
+
+    def new_game(self):
+        name = input('Enter your name: ')
+        print('Hello, {}'.format(name))
+        self.register_name(name)
+
     def human_play(self, choice):
         return Choose[choice.upper()].value if choice in RPSEngine.OPTIONS else None
 
